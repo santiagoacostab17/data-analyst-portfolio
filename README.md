@@ -49,5 +49,5 @@ This portfolio reflects my capability to **analyze, interpret, and communicate d
 
 ## 📬 Contact
 
-- **LinkedIn:** [santiagoacostab17](https:/www.linkedin.com/in/santiagoacostab17)  
+- **LinkedIn:** [santiagoacostab17](www.linkedin.com/in/santiagoacostab17)  
 - **Email:** santiagoacostab17@gmail.com  
