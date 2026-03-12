@@ -45,3 +45,9 @@ This portfolio reflects my capability to **analyze, interpret, and communicate d
 - **Tools:** SQL | Python | Power BI  
 - **Key Insights:** Campaign ROI analysis, A/B testing, real-time dashboards.  
 
+---
+
+## 📬 Contact
+
+- **LinkedIn:** [Your LinkedIn](https:/www.linkedin.com/in/santiagoacostab17)  
+- **Email:** santiagoacostab17@gmail.com  
