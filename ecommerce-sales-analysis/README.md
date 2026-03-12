@@ -14,7 +14,7 @@ This project aims to:
 - Segment customers for targeted marketing campaigns.
 
 **Tools used:**  
-`SQL (MySQL / SQLite)` | `Python (data cleaning & analysis)` | `Power BI (dashboards)`
+`SQL (MySQL)` | `Python (data cleaning & analysis)` | `Power BI (dashboards)`
 
 ---
 
@@ -27,16 +27,4 @@ This project aims to:
 | `scripts/`    | Python script for data cleaning (`prepare_clean_data.py`) |
 | `sql/`        | SQL scripts for table creation and queries |
 
----
 
-## 🛠 Data Preparation
-
-- Remove rows with missing `CustomerID`.
-- Convert data types for consistency.
-- Calculate `TotalAmount` (`Quantity * UnitPrice`).
-- Flag returned items with `ReturnFlag`.
-- Normalize dataset into three tables: `customers`, `products`, and `orders`.
-
-**Run the cleaning script:**  
-```bash
-python scripts/prepare_clean_data.py
