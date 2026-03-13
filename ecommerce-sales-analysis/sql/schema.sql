@@ -1,42 +1,41 @@
--- ======================================
--- Schema for Ecommerce Sales Analysis
--- ======================================
-
--- 1️⃣ Create database
-CREATE DATABASE IF NOT EXISTS ecommerce;
-USE ecommerce;
-
--- ---------------------
--- Customers table
--- ---------------------
-CREATE TABLE IF NOT EXISTS customers (
+-- customers
+CREATE TABLE customers (
     CustomerID INT PRIMARY KEY,
-    Country VARCHAR(100) NOT NULL
+    Country VARCHAR(100)
 );
 
--- ---------------------
--- Products table
--- ---------------------
-CREATE TABLE IF NOT EXISTS products (
+-- products
+CREATE TABLE products (
     StockCode VARCHAR(20) PRIMARY KEY,
-    Description TEXT NOT NULL,
-    UnitPrice DECIMAL(10,2) NOT NULL
+    Description VARCHAR(255),
+    UnitPrice DECIMAL(10,2)
 );
 
--- ---------------------
--- Orders table
--- ---------------------
-CREATE TABLE IF NOT EXISTS orders (
-    OrderID INT AUTO_INCREMENT PRIMARY KEY,
-    InvoiceNo VARCHAR(20) NOT NULL,
-    CustomerID INT NOT NULL,
-    StockCode VARCHAR(20) NOT NULL,
-    Quantity INT NOT NULL,
-    InvoiceDate DATETIME NOT NULL,
-    TotalAmount DECIMAL(10,2) NOT NULL,
-    ReturnFlag BOOLEAN DEFAULT 0,
-
-    -- Foreign Keys
+-- orders
+CREATE TABLE orders (
+    InvoiceNo VARCHAR(20),
+    CustomerID INT,
+    StockCode VARCHAR(20),
+    Quantity INT,
+    InvoiceDate DATETIME,
+    SalesAmount DECIMAL(12,2),
+    ReturnsAmount DECIMAL(12,2),
     FOREIGN KEY (CustomerID) REFERENCES customers(CustomerID),
     FOREIGN KEY (StockCode) REFERENCES products(StockCode)
+);
+
+-- opcional: KPIs globales
+CREATE TABLE global_kpis (
+    Metric VARCHAR(50),
+    Value DECIMAL(12,2)
+);
+
+-- opcional: KPIs por país
+CREATE TABLE country_kpis (
+    Country VARCHAR(100),
+    TotalRevenue DECIMAL(12,2),
+    TotalReturns DECIMAL(12,2),
+    AvgOrderValue DECIMAL(12,2),
+    TotalOrders INT,
+    UniqueCustomers INT
 );
